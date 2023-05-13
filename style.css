@@ -1,0 +1,254 @@
+/* mobile design */
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Red Hat Text', sans-serif;
+    background-image: url(./images/bg-stars.svg);
+    background-color: #201E29;
+    }    
+
+main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    text-transform: uppercase;
+    text-align: center;
+    align-items: center;
+    }
+
+h1{
+    height: 48px;
+    width: 327px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 6px;
+    text-align: center;
+    color: white;
+    margin-top: 142px;
+    }
+
+.timer{
+    display: flex;
+    gap: 10px;
+    }  
+
+.timer-box{
+    position: relative;
+    color: hsla(345, 95%, 68% );
+    height: 78px;
+    width: 82px;
+    background-color: hsl(236, 21%, 26%);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 2.4rem;
+    line-height: 2;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.45);
+    margin-top: 104px;
+    }
+
+.timer-box::before,
+.timer-box::after{
+    content: "";
+    position: absolute;
+    z-index: 6;
+    top: calc(50% - 5px);
+    background-color: hsl(234, 17%, 12%);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    }
+
+.timer-box::before{
+    left: -5px;
+    }
+
+.timer-box::after{
+    right: -5px;
+    }
+
+.timer-box > div{
+    position: absolute;
+    left: 0;
+    right: 0;
+    } 
+
+.timer-top{
+    z-index: 3;
+    background-color: hsl(235, 21%, 21%);
+    transform-origin: 50% 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transform: perspective(200px);
+    } 
+
+.timer-box .timer-top::after,
+.timer-box .timer-bottom-back::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0; 
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid hsl(234, 17%, 12%);
+    } 
+
+.timer-bottom{
+    z-index: 1;
+    border-radius: 8px;
+    } 
+
+.timer-bottom::before{
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    border-radius: 8px;
+    background-color:  hsl(235, 20%, 25%);
+    } 
+
+.timer-bottom-back{
+    z-index: 2;
+    top: 0;
+    height: 50%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color:  hsl(235, 21%, 21%);
+    } 
+
+.timer-bottom-back div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    } 
+
+.timer-top,
+.timer-top-back{
+    height: 50%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    } 
+
+.timer-top-back{
+    z-index: 4;
+    bottom: 0;
+    transform-origin: 50% 0;
+    background-color:  hsl(235, 20%, 25%);
+    border-radius: 8px;
+    transform: perspective(200px) rotateX(180deg);
+    }
+
+.timer-top-back div{
+    position: absolute;
+    top: -100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    } 
+
+.timer-box p{
+    position: relative;
+    top: 90px;
+    color: hsl(237, 18%, 59%);
+    font-size: 8px;
+    letter-spacing: 3px;
+    }
+
+footer{
+    height: 178px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding-top: 70px;
+    padding-bottom: 45px;
+    box-sizing: border-box;
+    background-image: url(./images/pattern-hills.svg);
+    background-size: cover;
+    background-repeat: repeat-x;
+    background-position: center right;
+    }  
+
+.icon{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    cursor: pointer;
+    }  
+
+.icon-facebook{
+    background-image: url(./images/icon-facebook.svg);
+    }
+
+.icon-pinterest{
+    background-image: url(./images/icon-pinterest.svg);
+    }    
+
+.icon-instagram{
+    background-image: url(./images/icon-instagram.svg);
+    }
+
+.icon-facebook:hover,
+.icon-facebook:focus{
+    background-image: url(./images/icon-facebook-hover.svg); 
+    }
+
+.icon-pinterest:hover,
+.icon-pinterest:focus{
+    background-image: url(./images/icon-pinterest-hover.svg); 
+    }    
+
+.icon-instagram:hover,
+.icon-instagram:focus{
+    background-image: url(./images/icon-instagram-hover.svg);
+    }
+
+
+/* desktop design  */
+
+@media screen and (min-width: 960px) {
+    h1 {
+      font-size: 22px;  
+      height: 29px;
+      width: 451px;
+      font-size: 22px;
+      line-height: 29px;
+      letter-spacing: 7.5px;
+      }
+
+    .timer-bottom-back{
+      gap: 24px;
+      }
+
+    .timer{
+      gap: 18px;
+      }
+
+    .timer-box{
+      height: 112px;
+      width: 120px;
+      font-size: 4rem;
+      line-height: 1.7;
+      } 
+
+    .timer-box p{
+      position: relative;
+      top: 140px;
+      color: hsl(237, 18%, 59%);
+      font-size: 12px;
+      }
+
+  }
+
